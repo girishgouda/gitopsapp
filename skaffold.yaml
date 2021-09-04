@@ -1,0 +1,22 @@
+apiVersion: skaffold/v2beta1
+kind: Config
+build:
+  artifacts:
+  - image: result
+    context: result
+  - image: vote
+    context: vote
+  - image: worker
+    context: worker
+
+  tagPolicy:
+    gitCommit: {}
+  local:
+    useBuildkit: false
+deploy:
+  kubectl:
+    manifests:
+    - ./k8s-specifications/*.yaml
+
+
+#skaffold run --default-repo=girishgoudar --tail
