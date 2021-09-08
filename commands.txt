@@ -1,0 +1,10 @@
+appName="myApp"
+
+az ad app create \
+--display-name $appName \
+--homepage "http://localhost/$appName" \
+--identifier-uris http://localhost/$appName
+
+az ad sp create-for-rbac --name "myApp" --role contributor \
+                            --scopes /subscriptions/{subscription-id}/resourceGroups/{resource-group} \
+                            --sdk-auth
