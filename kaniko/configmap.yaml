@@ -6,7 +6,7 @@ data:
   config.json: |-
     {
       "auths": {
-            "${REGISTRY_NAME}.azurecr.io": {}
+            "azureacrgirish.azurecr.io": {}
         },
         "credsStore": "acr"
     }

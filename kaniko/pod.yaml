@@ -6,11 +6,11 @@ spec:
   restartPolicy: Never
   containers:
   - name: kaniko
-    image: gcr.io/kaniko-project/executor:v1.0.0
+    image: gcr.io/kaniko-project/executor:latest
     imagePullPolicy: Always
     args: ["--dockerfile=Dockerfile",
             "--context=git://github.com/carlossg/kaniko-demo.git",
-            "--destination=${REGISTRY_NAME}.azurecr.io/kaniko-demo:latest",
+            "--destination=azureacrgirish.azurecr.io/kaniko-demo:latest",
             "--cache=true"]
     volumeMounts:
     - name: docker-config
@@ -27,4 +27,4 @@ spec:
       name: docker-config
   - name: docker-acr-config
     secret:
-      name: kaniko-secret
+      secretName: kaniko-secret
