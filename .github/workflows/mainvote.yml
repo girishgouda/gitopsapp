@@ -32,13 +32,13 @@ jobs:
       
       
     - name: Login via Azure CLI
-      uses: azure/login@v1
+      uses: azure/actions/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
         
         
     - name: Login to Azure Container Registry
-      uses: azure/docker-login@v1
+      uses: azure/actions/docker-login@v1
       with:
         login-server: azureacrgirish.azurecr.io
         username: ${{ secrets.REGISTRY_USERNAME }}
