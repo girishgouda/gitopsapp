@@ -38,7 +38,7 @@ jobs:
         
         
     - name: Login to Azure Container Registry
-      uses: azure/actions/docker-login@v1
+      uses: azure/docker-login@v1
       with:
         login-server: azureacrgirish.azurecr.io
         username: ${{ secrets.REGISTRY_USERNAME }}
