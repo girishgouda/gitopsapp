@@ -39,7 +39,7 @@ jobs:
     
     # Container build and push to a Azure Container Registry (ACR)
     - run: |
-        docker build -f ../../../gitopsapp/vote/Dockerfile -t azureacrgirish.azurecr.io/vote:${{ github.sha }}
+        docker build ../../../gitopsapp/vote/Dockerfile -t azureacrgirish.azurecr.io/vote:${{ github.sha }}
         docker push azureacrgirish.azurecr.io/vote:${{ github.sha }}
      
     - name: Azure logout
